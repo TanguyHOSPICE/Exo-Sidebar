@@ -1,0 +1,92 @@
+/**A-@-*(m/p)-body(bgc/ff)-.cont(c/transi/h)-h1(tali/ttransf/fsi)-p(p)*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #383838;
+	font-family: "Poppins", sans-serif;
+}
+.content {
+	color: #09fbba;
+	transition: 1s;
+	height: 100vh;
+}
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 4rem;
+}
+p {
+	padding: 2rem 5rem;
+}
+/**B-#sid(pos/w/h/bg/left/transi/z)*/
+#side-bar {
+	position: absolute;
+	width: 230px;
+	height: 100%;
+	background: #09fbba;
+	left: -300px; /*On sort la side bar de l'écran*/
+	transition: 0.5s ease-in-out;
+	z-index: 4; /*z-index pour que la side bar passe au dessus de tous*/
+}
+/**C-.toggle-btn(=icon)(pos/top/left/cur/h/w)Placement*/
+.toggle-btn {
+	position: absolute;
+	top: 30px;
+	left: 310px;
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+}
+/**D-.toggle-btn span(w/h/brad)-li(c/lstyp/fsi/cur/pl)-li:hov(bg/c)*/
+.toggle-btn span {
+	width: 60px;
+	height: 10px;
+	border-radius: 5px;
+	background: #09fbba;
+	display: block;
+	margin-top: 4px;
+	transition: 0.5s ease;
+}
+li {
+	color: #292929;
+	list-style-type: none;
+	font-size: 2.5rem;
+	cursor: pointer;
+	padding-left: 5px;
+}
+li:hover {
+	background: #292929;
+	color: #fcfcfb;
+}
+/*AVEC JS:*/
+/**E-#side-bar.active(l)-#side-bar.active .togg(t/l)-#side-bar.active span(pos)..*/
+#side-bar.active {
+	left: 0;
+}
+#side-bar.active .toggle-btn {
+	top: 2.8rem;
+	left: 235px;
+}
+#side-bar.active span {
+	position: absolute;
+	background: red;
+}
+#side-bar.active span:nth-child(1) {
+	transform: rotate(45deg);
+}
+#side-bar.active span:nth-child(2) {
+	opacity: 0;
+}
+#side-bar.active span:nth-child(3) {
+	transform: rotate(-45deg);
+}
+/**F-*/
+#side-bar.active ~ .content {
+	opacity: 0.3; /*Creation opacité du fond */
+}
+
+/*# sourceMappingURL=style.css.map */ ;
